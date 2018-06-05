@@ -25,7 +25,7 @@
         articleRequest.onerror = function (err) {
             requestError(err, 'articles');
         }
-        articleRequest.open('GET', `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=e24a6247b4404073bd02d373b48c674b`);
+        articleRequest.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=e24a6247b4404073bd02d373b48c674b`);
         articleRequest.send();
     });
     
@@ -63,5 +63,10 @@
         }
         
         responseContainer.insertAdjacentHTML('beforeend', htmlContent);
+    }
+
+    function requestError(e, part) {
+        console.log(e);
+        responseContainer.insertAdjacentHTML('beforeend', `<p class="network-warning error-no-image error-no-articles">Error!</p>`);
     }
 })();
