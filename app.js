@@ -32,7 +32,7 @@
     function addImage() {
         let htmlContent = '';
         const data = JSON.parse(this.responseText);
-        
+        // if there is an img display this
         if (data && data.results && data.results[0]) {
             const firstImage = data.results[0];
             htmlContent = `<figure> 
@@ -40,6 +40,7 @@
                 <figcaptions>${searchedForText} by ${firstImage.user.name}</figcaptions>
             </figure>`;
         } else {
+            // else display this
             htmlContent = '<div class="error-no-image">No images available</div>';
         }
         
@@ -49,7 +50,7 @@
     function addArticles() { 
         let htmlContent = '';
         const data = JSON.parse(this.responseText);
-
+        // if there is an article display this
         if (data.response && data.response.docs && data.response.docs.length > 1) {            
             htmlContent = '<ul>' + data.response.docs.map(article => `<li class="article">
                     <h2><a href="${article.web_url}">${article.headline.main}</a></h2>
@@ -57,6 +58,7 @@
                 </li>`
             ).join('') + '</ul>';                
         } else {
+            // else display this
             htmlContent = '<div class="error-no-articles">No articles available</div>';
         }
         
