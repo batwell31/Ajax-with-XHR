@@ -1,5 +1,10 @@
 # Ajax-with-XHR #
 
+## Try it live ##
+https://batwell31.github.io/Ajax-with-XHR/
+
+## About the project ##
+
 This was a mini project provided to me through Udacity.  It listens to a form/search field to search for any topic you type in upon pressing the submit button.
 
 This application makes XMLHttpRequests through Unsplash, and The New York Times to retrieve images, and articles to be displayed on this application.  Depending on what you type into the search bar that is!
